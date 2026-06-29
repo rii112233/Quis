@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pertanyaan</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#89f7fe,#66a6ff);
+    overflow:hidden;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    width:320px;
+    box-shadow:0 0 15px rgba(0,0,0,.2);
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin:10px;
+}
+
+#iya{
+    background:#28a745;
+    color:white;
+}
+
+#nggak{
+    background:#dc3545;
+    color:white;
+    position:absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>Aku Mau Tanya...</h2>
+<p>Mau lanjut baca sampai selesai?</p>
+
+<button id="iya" onclick="tembak()">Iya</button>
+<button id="nggak">Nggak</button>
+</div>
+
+<script>
+const btn=document.getElementById("nggak");
+
+btn.addEventListener("mouseover", pindah);
+btn.addEventListener("click", pindah);
+
+function pindah(){
+    btn.style.left=Math.random()*(window.innerWidth-100)+"px";
+    btn.style.top=Math.random()*(window.innerHeight-50)+"px";
+}
+
+function tembak(){
+    document.body.innerHTML=`
+    <div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial;text-align:center;padding:20px;background:linear-gradient(135deg,#89f7fe,#66a6ff);">
+    <div style="background:white;padding:30px;border-radius:20px;max-width:400px;box-shadow:0 0 15px rgba(0,0,0,.2);">
+    <h2>Ada yang mau aku bilang...</h2>
+    <p>Selama ini aku nyaman ngobrol sama kamu.</p>
+    <p>Aku pengen hubungan kita lebih dari sekadar teman.</p>
+    <h3>Maukah kamu jadi pacarku?</h3>
+    </div>
+    </div>
+    `;
+}
+</script>
+
+</body>
+                   </html>
